@@ -12,21 +12,21 @@ for (var i = 0; i < numberArray.length; i++) {
   sum2 += numberArray[i];
 }
 
-console.log("sum", sum);
+// console.log("sum", sum);
 // console.log('sum2', sum2);
 
 /* Sum of number divided by 2 */
-function sumNumbersByDivided(...array) {
+function sumNumbersByDivided(array) {
   let sum = 0;
   let divided = 2;
 
-  /* for(let i = 0; i < numberArray.length; i++) {
+  /* for(let i = 0; i < array.length; i++) {
       if (numberArray[i] % divided === 0) {
         sum += numberArray[i];
       }
   } */
 
-  numberArray.forEach(function (val) {
+  array.forEach(function (val) {
     if (val % divided == 0) {
       sum += val;
     }
@@ -35,4 +35,18 @@ function sumNumbersByDivided(...array) {
   return sum;
 }
 
-console.log(`divided function ${sumNumbersByDivided(numberArray)}`);
+// console.log(`divided function ${sumNumbersByDivided(numberArray)}`);
+
+/* 
+  Changes each member to sum of all the previous members
+*/
+function sumAllPrevs(array) {
+  let sum = 0;
+
+  array.forEach(function (val) {
+    sum += val++;
+  });
+
+  return sum;
+}
+// console.log(`sum of all the previous members ${sumAllPrevs(numberArray)}`);
